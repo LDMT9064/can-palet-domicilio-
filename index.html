@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Rostissería Can Palet | Pedidos</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -16,22 +18,23 @@ body{
   font-family:Arial,sans-serif;
   background:#f6f3ed;
   color:#222;
-  padding-bottom:190px;
+  padding-bottom:220px;
 }
 
 header{
   background:#171717;
   color:white;
-  padding:22px 20px;
+  padding:20px;
+  text-align:center;
 }
 
 header h1{
-  font-size:28px;
+  font-size:27px;
 }
 
 header p{
-  margin-top:4px;
-  font-size:15px;
+  margin-top:5px;
+  font-size:14px;
 }
 
 main{
@@ -44,32 +47,36 @@ main{
   background:#fff0c9;
   border-radius:18px;
   padding:15px 18px;
-  margin-bottom:22px;
+  margin-bottom:20px;
   line-height:1.5;
 }
 
 .horarios h3{
-  margin-bottom:4px;
+  margin-bottom:3px;
 }
 
 .categoria{
-  margin-bottom:26px;
+  margin-bottom:25px;
 }
 
 .categoria h2{
   font-size:27px;
-  margin:14px 4px;
+  margin:16px 4px 13px;
 }
+
+/* PRODUCTOS */
 
 .producto{
   background:white;
   border-radius:17px;
-  padding:14px 14px;
+  padding:12px 14px;
   margin-bottom:10px;
+
   display:grid;
-  grid-template-columns:1fr auto auto;
-  gap:12px;
+  grid-template-columns:minmax(0,1fr) auto auto;
   align-items:center;
+  gap:10px;
+
   box-shadow:0 4px 12px rgba(0,0,0,.06);
 }
 
@@ -88,13 +95,13 @@ main{
 .controles{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:5px;
 }
 
 .controles button{
   border:0;
-  width:40px;
-  height:40px;
+  width:39px;
+  height:39px;
   border-radius:10px;
   font-size:23px;
   font-weight:bold;
@@ -111,11 +118,13 @@ main{
 }
 
 .cantidad{
-  width:38px;
+  min-width:32px;
   text-align:center;
   font-weight:bold;
   font-size:18px;
 }
+
+/* CARRITO */
 
 .carrito{
   position:fixed;
@@ -123,17 +132,18 @@ main{
   right:0;
   bottom:0;
   background:white;
-  box-shadow:0 -4px 18px rgba(0,0,0,.15);
+  box-shadow:0 -4px 18px rgba(0,0,0,.18);
   z-index:100;
 }
 
 .carrito-barra{
   background:#171717;
   color:white;
-  padding:15px 18px;
+  padding:14px 16px;
+
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
 }
 
 .carrito-titulo{
@@ -143,27 +153,53 @@ main{
 
 .badge{
   display:inline-block;
-  min-width:24px;
+  min-width:25px;
   padding:3px 7px;
   margin-left:5px;
+
   background:#ef3340;
   border-radius:20px;
+
   text-align:center;
   font-size:14px;
 }
 
 .total{
   font-size:18px;
+  white-space:nowrap;
 }
 
 .carrito-contenido{
-  padding:14px 16px 16px;
-  text-align:center;
+  padding:11px 16px 15px;
+}
+
+.resumen{
+  margin-bottom:10px;
+}
+
+.linea{
+  display:flex;
+  justify-content:space-between;
+  margin:5px 0;
+  font-size:16px;
+}
+
+.linea-total{
+  display:flex;
+  justify-content:space-between;
+
+  border-top:1px solid #ddd;
+  margin-top:8px;
+  padding-top:8px;
+
+  font-size:19px;
+  font-weight:bold;
 }
 
 .vacio{
+  text-align:center;
   color:#777;
-  margin-bottom:13px;
+  margin-bottom:12px;
   line-height:1.4;
 }
 
@@ -172,22 +208,47 @@ main{
   border:0;
   background:#31d57b;
   color:#111;
-  padding:17px;
+
+  padding:16px;
   border-radius:14px;
+
   font-size:19px;
   font-weight:bold;
 }
 
-@media(max-width:520px){
+/* MÓVIL */
+
+@media(max-width:480px){
+
   .producto{
-    grid-template-columns:1fr auto;
+    padding:11px 10px;
+    gap:6px;
+  }
+
+  .nombre{
+    font-size:15px;
+  }
+
+  .precio{
+    font-size:16px;
   }
 
   .controles{
-    grid-column:1 / 3;
-    justify-content:flex-end;
+    gap:3px;
+  }
+
+  .controles button{
+    width:35px;
+    height:35px;
+    font-size:21px;
+  }
+
+  .cantidad{
+    min-width:25px;
+    font-size:16px;
   }
 }
+
 </style>
 </head>
 
@@ -201,183 +262,437 @@ main{
 <main>
 
 <div class="horarios">
+
   <h3>🕒 Horarios de pedidos</h3>
+
   <div>Churros: 08:30 – 11:30</div>
   <div>Comidas: 12:00 – 15:00</div>
+
 </div>
+
 
 <section class="categoria">
 
 <h2>🥨 Churros y porras</h2>
 
+
 <div class="producto">
+
   <div class="nombre">Porras 250 g</div>
+
   <div class="precio">4,00 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(0,-1)">−</button>
-    <span class="cantidad" id="cantidad0">0</span>
-    <button class="mas" onclick="cambiar(0,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(0,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad0">0</span>
+
+    <button class="mas"
+    onclick="cambiar(0,1)">+</button>
+
   </div>
+
 </div>
 
+
 <div class="producto">
+
   <div class="nombre">Porras 500 g</div>
+
   <div class="precio">8,00 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(1,-1)">−</button>
-    <span class="cantidad" id="cantidad1">0</span>
-    <button class="mas" onclick="cambiar(1,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(1,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad1">0</span>
+
+    <button class="mas"
+    onclick="cambiar(1,1)">+</button>
+
   </div>
+
 </div>
 
+
 <div class="producto">
+
   <div class="nombre">Porras 1 kg</div>
+
   <div class="precio">15,50 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(2,-1)">−</button>
-    <span class="cantidad" id="cantidad2">0</span>
-    <button class="mas" onclick="cambiar(2,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(2,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad2">0</span>
+
+    <button class="mas"
+    onclick="cambiar(2,1)">+</button>
+
   </div>
+
 </div>
 
 </section>
+
 
 <section class="categoria">
 
 <h2>☕ Chocolate</h2>
 
+
 <div class="producto">
+
   <div class="nombre">Chocolate 280 ml</div>
+
   <div class="precio">2,00 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(3,-1)">−</button>
-    <span class="cantidad" id="cantidad3">0</span>
-    <button class="mas" onclick="cambiar(3,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(3,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad3">0</span>
+
+    <button class="mas"
+    onclick="cambiar(3,1)">+</button>
+
   </div>
+
 </div>
 
+
 <div class="producto">
+
   <div class="nombre">Chocolate 500 ml</div>
+
   <div class="precio">4,50 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(4,-1)">−</button>
-    <span class="cantidad" id="cantidad4">0</span>
-    <button class="mas" onclick="cambiar(4,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(4,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad4">0</span>
+
+    <button class="mas"
+    onclick="cambiar(4,1)">+</button>
+
   </div>
+
 </div>
 
+
 <div class="producto">
+
   <div class="nombre">Chocolate 1000 ml</div>
+
   <div class="precio">7,50 €</div>
+
   <div class="controles">
-    <button class="menos" onclick="cambiar(5,-1)">−</button>
-    <span class="cantidad" id="cantidad5">0</span>
-    <button class="mas" onclick="cambiar(5,1)">+</button>
+
+    <button class="menos"
+    onclick="cambiar(5,-1)">−</button>
+
+    <span class="cantidad"
+    id="cantidad5">0</span>
+
+    <button class="mas"
+    onclick="cambiar(5,1)">+</button>
+
   </div>
+
 </div>
 
 </section>
 
 </main>
 
+
 <div class="carrito">
 
   <div class="carrito-barra">
+
     <div class="carrito-titulo">
+
       🛒 Tu pedido
-      <span class="badge" id="contador">0</span>
+
+      <span class="badge"
+      id="contador">0</span>
+
     </div>
 
     <div class="total">
-      Total: <strong id="total">0,00 €</strong>
+
+      Total:
+      <strong id="totalSuperior">
+      0,00 €
+      </strong>
+
     </div>
+
   </div>
+
 
   <div class="carrito-contenido">
 
-    <div class="vacio" id="mensaje">
+    <div id="vacio"
+    class="vacio">
+
       Tu carrito está vacío<br>
-      <small>Añade productos para hacer tu pedido</small>
+
+      <small>
+      Añade productos para hacer tu pedido
+      </small>
+
     </div>
 
-    <button class="hacer-pedido" onclick="hacerPedido()">
+
+    <div id="resumen"
+    class="resumen"
+    style="display:none;">
+
+      <div class="linea">
+
+        <span>Productos</span>
+
+        <strong id="subtotal">
+        0,00 €
+        </strong>
+
+      </div>
+
+
+      <div class="linea">
+
+        <span>🚚 Reparto</span>
+
+        <strong>
+        4,99 €
+        </strong>
+
+      </div>
+
+
+      <div class="linea-total">
+
+        <span>TOTAL</span>
+
+        <span id="totalFinal">
+        0,00 €
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <button
+    class="hacer-pedido"
+    onclick="hacerPedido()">
+
       HACER PEDIDO →
+
     </button>
 
   </div>
 
 </div>
 
+
 <script>
 
+const GASTO_REPARTO = 4.99;
+
 const productos = [
-  {nombre:"Porras 250 g", precio:4.00},
-  {nombre:"Porras 500 g", precio:8.00},
-  {nombre:"Porras 1 kg", precio:15.50},
-  {nombre:"Chocolate 280 ml", precio:2.00},
-  {nombre:"Chocolate 500 ml", precio:4.50},
-  {nombre:"Chocolate 1000 ml", precio:7.50}
+
+  {
+    nombre:"Porras 250 g",
+    precio:4.00
+  },
+
+  {
+    nombre:"Porras 500 g",
+    precio:8.00
+  },
+
+  {
+    nombre:"Porras 1 kg",
+    precio:15.50
+  },
+
+  {
+    nombre:"Chocolate 280 ml",
+    precio:2.00
+  },
+
+  {
+    nombre:"Chocolate 500 ml",
+    precio:4.50
+  },
+
+  {
+    nombre:"Chocolate 1000 ml",
+    precio:7.50
+  }
+
 ];
 
+
 let cantidades = [0,0,0,0,0,0];
+
+
+function euros(numero){
+
+  return numero
+  .toFixed(2)
+  .replace(".",",")
+  +" €";
+
+}
+
 
 function cambiar(indice,cambio){
 
   cantidades[indice] += cambio;
 
   if(cantidades[indice] < 0){
+
     cantidades[indice] = 0;
+
   }
 
-  document.getElementById(
-    "cantidad"+indice
-  ).textContent = cantidades[indice];
+  document
+  .getElementById("cantidad"+indice)
+  .textContent =
+  cantidades[indice];
 
   actualizarCarrito();
+
 }
+
 
 function actualizarCarrito(){
 
   let unidades = 0;
-  let total = 0;
 
-  cantidades.forEach((cantidad,i)=>{
-    unidades += cantidad;
-    total += cantidad * productos[i].precio;
-  });
+  let subtotal = 0;
 
-  document.getElementById("contador").textContent = unidades;
 
-  document.getElementById("total").textContent =
-    total.toFixed(2).replace(".",",") + " €";
+  cantidades.forEach(
+    (cantidad,i)=>{
+
+      unidades += cantidad;
+
+      subtotal +=
+      cantidad *
+      productos[i].precio;
+
+    }
+  );
+
+
+  let reparto = 0;
+
+  if(unidades > 0){
+
+    reparto = GASTO_REPARTO;
+
+  }
+
+
+  const total =
+  subtotal + reparto;
+
+
+  document
+  .getElementById("contador")
+  .textContent =
+  unidades;
+
+
+  document
+  .getElementById("totalSuperior")
+  .textContent =
+  euros(total);
+
 
   if(unidades === 0){
 
-    document.getElementById("mensaje").innerHTML =
-      "Tu carrito está vacío<br><small>Añade productos para hacer tu pedido</small>";
+    document
+    .getElementById("vacio")
+    .style.display =
+    "block";
 
-  }else{
-
-    document.getElementById("mensaje").innerHTML =
-      "<strong>"+unidades+
-      " producto(s) seleccionado(s)</strong>";
+    document
+    .getElementById("resumen")
+    .style.display =
+    "none";
 
   }
+
+  else{
+
+    document
+    .getElementById("vacio")
+    .style.display =
+    "none";
+
+    document
+    .getElementById("resumen")
+    .style.display =
+    "block";
+
+
+    document
+    .getElementById("subtotal")
+    .textContent =
+    euros(subtotal);
+
+
+    document
+    .getElementById("totalFinal")
+    .textContent =
+    euros(total);
+
+  }
+
 }
+
 
 function hacerPedido(){
 
-  let unidades =
-    cantidades.reduce((a,b)=>a+b,0);
+  const unidades =
+  cantidades.reduce(
+    (a,b)=>a+b,0
+  );
+
 
   if(unidades === 0){
 
-    alert("Añade algún producto antes de hacer el pedido.");
+    alert(
+    "Añade algún producto antes de hacer el pedido."
+    );
 
     return;
+
   }
 
-  alert("Pedido preparado correctamente. En la siguiente etapa añadiremos los datos del cliente y el envío.");
+
+  alert(
+  "Pedido preparado. En la siguiente etapa añadiremos los datos del cliente y la dirección de entrega."
+  );
+
 }
 
 </script>
