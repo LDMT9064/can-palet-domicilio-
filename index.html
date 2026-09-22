@@ -1,211 +1,386 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rostissería Can Palet | Pedidos</title>
 
-  <title>Rostisseria Can Palet | Pedidos a domicilio</title>
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#f6f3ed;
+  color:#222;
+  padding-bottom:190px;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f3ed;
-      color: #222;
-      padding-bottom: 120px;
-    }
+header{
+  background:#171717;
+  color:white;
+  padding:22px 20px;
+}
 
-    header {
-      background: #171717;
-      color: white;
-      text-align: center;
-      padding: 28px 16px;
-    }
+header h1{
+  font-size:28px;
+}
 
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+header p{
+  margin-top:4px;
+  font-size:15px;
+}
 
-    header p {
-      font-size: 17px;
-      opacity: 0.9;
-    }
+main{
+  max-width:700px;
+  margin:auto;
+  padding:14px;
+}
 
-    main {
-      max-width: 700px;
-      margin: auto;
-      padding: 20px 16px;
-    }
+.horarios{
+  background:#fff0c9;
+  border-radius:18px;
+  padding:15px 18px;
+  margin-bottom:22px;
+  line-height:1.5;
+}
 
-    .horarios {
-      background: #fff1cc;
-      border-radius: 18px;
-      padding: 20px;
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
+.horarios h3{
+  margin-bottom:4px;
+}
 
-    .horarios h2 {
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
+.categoria{
+  margin-bottom:26px;
+}
 
-    .seccion {
-      margin-bottom: 30px;
-    }
+.categoria h2{
+  font-size:27px;
+  margin:14px 4px;
+}
 
-    .seccion h2 {
-      font-size: 27px;
-      margin-bottom: 16px;
-    }
+.producto{
+  background:white;
+  border-radius:17px;
+  padding:14px 14px;
+  margin-bottom:10px;
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:12px;
+  align-items:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
 
-    .producto {
-      background: white;
-      border-radius: 18px;
-      padding: 22px 20px;
-      margin-bottom: 14px;
+.nombre{
+  font-weight:700;
+  font-size:17px;
+}
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+.precio{
+  color:#c52c2c;
+  font-weight:700;
+  font-size:18px;
+  white-space:nowrap;
+}
 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    }
+.controles{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
 
-    .producto h3 {
-      font-size: 21px;
-    }
+.controles button{
+  border:0;
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  font-size:23px;
+  font-weight:bold;
+}
 
-    .precio {
-      color: #bd2929;
-      font-size: 22px;
-      font-weight: bold;
-      white-space: nowrap;
-      margin-left: 15px;
-    }
+.menos{
+  background:#e4e7eb;
+  color:#777;
+}
 
-    .info {
-      background: white;
-      border-radius: 18px;
-      padding: 20px;
-      line-height: 1.7;
-      margin-top: 20px;
-    }
+.mas{
+  background:#31d57b;
+  color:white;
+}
 
-    .pedido {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+.cantidad{
+  width:38px;
+  text-align:center;
+  font-weight:bold;
+  font-size:18px;
+}
 
-      background: #171717;
-      padding: 14px 16px 18px;
-    }
+.carrito{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:white;
+  box-shadow:0 -4px 18px rgba(0,0,0,.15);
+  z-index:100;
+}
 
-    .pedido button {
-      display: block;
-      width: 100%;
-      max-width: 700px;
-      margin: auto;
+.carrito-barra{
+  background:#171717;
+  color:white;
+  padding:15px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-      border: none;
-      border-radius: 16px;
+.carrito-titulo{
+  font-size:19px;
+  font-weight:bold;
+}
 
-      background: #35d477;
-      color: #111;
+.badge{
+  display:inline-block;
+  min-width:24px;
+  padding:3px 7px;
+  margin-left:5px;
+  background:#ef3340;
+  border-radius:20px;
+  text-align:center;
+  font-size:14px;
+}
 
-      padding: 20px;
-      font-size: 22px;
-      font-weight: bold;
+.total{
+  font-size:18px;
+}
 
-      cursor: pointer;
-    }
+.carrito-contenido{
+  padding:14px 16px 16px;
+  text-align:center;
+}
 
-    .pedido button:active {
-      transform: scale(0.98);
-    }
-  </style>
+.vacio{
+  color:#777;
+  margin-bottom:13px;
+  line-height:1.4;
+}
+
+.hacer-pedido{
+  width:100%;
+  border:0;
+  background:#31d57b;
+  color:#111;
+  padding:17px;
+  border-radius:14px;
+  font-size:19px;
+  font-weight:bold;
+}
+
+@media(max-width:520px){
+  .producto{
+    grid-template-columns:1fr auto;
+  }
+
+  .controles{
+    grid-column:1 / 3;
+    justify-content:flex-end;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🍗 Rostisseria Can Palet</h1>
-    <p>Pedidos a domicilio</p>
-  </header>
+<header>
+  <h1>👨‍🍳 Rostissería Can Palet</h1>
+  <p>Tradición y buen sabor · Comida casera para disfrutar en casa</p>
+</header>
 
-  <main>
+<main>
 
-    <section class="horarios">
-      <h2>🕐 Horarios de pedidos</h2>
-      <p><strong>Churros:</strong> 08:30 – 11:30</p>
-      <p><strong>Comidas:</strong> 12:00 – 15:00</p>
-    </section>
+<div class="horarios">
+  <h3>🕒 Horarios de pedidos</h3>
+  <div>Churros: 08:30 – 11:30</div>
+  <div>Comidas: 12:00 – 15:00</div>
+</div>
 
+<section class="categoria">
 
-    <section class="seccion">
+<h2>🥨 Churros y porras</h2>
 
-      <h2>🥨 Churros y porras</h2>
+<div class="producto">
+  <div class="nombre">Porras 250 g</div>
+  <div class="precio">4,00 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(0,-1)">−</button>
+    <span class="cantidad" id="cantidad0">0</span>
+    <button class="mas" onclick="cambiar(0,1)">+</button>
+  </div>
+</div>
 
-      <div class="producto">
-        <h3>Porras 250 g</h3>
-        <span class="precio">4,00 €</span>
-      </div>
+<div class="producto">
+  <div class="nombre">Porras 500 g</div>
+  <div class="precio">8,00 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(1,-1)">−</button>
+    <span class="cantidad" id="cantidad1">0</span>
+    <button class="mas" onclick="cambiar(1,1)">+</button>
+  </div>
+</div>
 
-      <div class="producto">
-        <h3>Porras 500 g</h3>
-        <span class="precio">8,00 €</span>
-      </div>
+<div class="producto">
+  <div class="nombre">Porras 1 kg</div>
+  <div class="precio">15,50 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(2,-1)">−</button>
+    <span class="cantidad" id="cantidad2">0</span>
+    <button class="mas" onclick="cambiar(2,1)">+</button>
+  </div>
+</div>
 
-      <div class="producto">
-        <h3>Porras 1 kg</h3>
-        <span class="precio">15,50 €</span>
-      </div>
+</section>
 
-    </section>
+<section class="categoria">
 
+<h2>☕ Chocolate</h2>
 
-    <section class="seccion">
+<div class="producto">
+  <div class="nombre">Chocolate 280 ml</div>
+  <div class="precio">2,00 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(3,-1)">−</button>
+    <span class="cantidad" id="cantidad3">0</span>
+    <button class="mas" onclick="cambiar(3,1)">+</button>
+  </div>
+</div>
 
-      <h2>☕ Chocolate</h2>
+<div class="producto">
+  <div class="nombre">Chocolate 500 ml</div>
+  <div class="precio">4,50 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(4,-1)">−</button>
+    <span class="cantidad" id="cantidad4">0</span>
+    <button class="mas" onclick="cambiar(4,1)">+</button>
+  </div>
+</div>
 
-      <div class="producto">
-        <h3>Chocolate 280 ml</h3>
-        <span class="precio">2,00 €</span>
-      </div>
+<div class="producto">
+  <div class="nombre">Chocolate 1000 ml</div>
+  <div class="precio">7,50 €</div>
+  <div class="controles">
+    <button class="menos" onclick="cambiar(5,-1)">−</button>
+    <span class="cantidad" id="cantidad5">0</span>
+    <button class="mas" onclick="cambiar(5,1)">+</button>
+  </div>
+</div>
 
-      <div class="producto">
-        <h3>Chocolate 500 ml</h3>
-        <span class="precio">4,50 €</span>
-      </div>
+</section>
 
-      <div class="producto">
-        <h3>Chocolate 1000 ml</h3>
-        <span class="precio">7,50 €</span>
-      </div>
+</main>
 
-    </section>
+<div class="carrito">
 
-
-    <div class="info">
-      <p><strong>🚚 Reparto a domicilio</strong></p>
-      <p>Coste de reparto: <strong>4,99 €</strong></p>
+  <div class="carrito-barra">
+    <div class="carrito-titulo">
+      🛒 Tu pedido
+      <span class="badge" id="contador">0</span>
     </div>
 
-  </main>
-
-
-  <div class="pedido">
-    <button onclick="alert('En la siguiente etapa activaremos el sistema de pedidos')">
-      HACER PEDIDO
-    </button>
+    <div class="total">
+      Total: <strong id="total">0,00 €</strong>
+    </div>
   </div>
+
+  <div class="carrito-contenido">
+
+    <div class="vacio" id="mensaje">
+      Tu carrito está vacío<br>
+      <small>Añade productos para hacer tu pedido</small>
+    </div>
+
+    <button class="hacer-pedido" onclick="hacerPedido()">
+      HACER PEDIDO →
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+const productos = [
+  {nombre:"Porras 250 g", precio:4.00},
+  {nombre:"Porras 500 g", precio:8.00},
+  {nombre:"Porras 1 kg", precio:15.50},
+  {nombre:"Chocolate 280 ml", precio:2.00},
+  {nombre:"Chocolate 500 ml", precio:4.50},
+  {nombre:"Chocolate 1000 ml", precio:7.50}
+];
+
+let cantidades = [0,0,0,0,0,0];
+
+function cambiar(indice,cambio){
+
+  cantidades[indice] += cambio;
+
+  if(cantidades[indice] < 0){
+    cantidades[indice] = 0;
+  }
+
+  document.getElementById(
+    "cantidad"+indice
+  ).textContent = cantidades[indice];
+
+  actualizarCarrito();
+}
+
+function actualizarCarrito(){
+
+  let unidades = 0;
+  let total = 0;
+
+  cantidades.forEach((cantidad,i)=>{
+    unidades += cantidad;
+    total += cantidad * productos[i].precio;
+  });
+
+  document.getElementById("contador").textContent = unidades;
+
+  document.getElementById("total").textContent =
+    total.toFixed(2).replace(".",",") + " €";
+
+  if(unidades === 0){
+
+    document.getElementById("mensaje").innerHTML =
+      "Tu carrito está vacío<br><small>Añade productos para hacer tu pedido</small>";
+
+  }else{
+
+    document.getElementById("mensaje").innerHTML =
+      "<strong>"+unidades+
+      " producto(s) seleccionado(s)</strong>";
+
+  }
+}
+
+function hacerPedido(){
+
+  let unidades =
+    cantidades.reduce((a,b)=>a+b,0);
+
+  if(unidades === 0){
+
+    alert("Añade algún producto antes de hacer el pedido.");
+
+    return;
+  }
+
+  alert("Pedido preparado correctamente. En la siguiente etapa añadiremos los datos del cliente y el envío.");
+}
+
+</script>
 
 </body>
 </html>
