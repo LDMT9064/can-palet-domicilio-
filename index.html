@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rostisseria Can Palet | Pedidos a domicilio</title>
 
   <style>
@@ -16,6 +17,7 @@
       font-family: Arial, sans-serif;
       background: #f6f3ed;
       color: #222;
+      padding-bottom: 120px;
     }
 
     header {
@@ -31,67 +33,69 @@
     }
 
     header p {
-      color: #ddd;
-    }
-
-    .hero {
-      background: #b52b27;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    .hero h2 {
-      font-size: 25px;
-      margin-bottom: 8px;
+      font-size: 17px;
+      opacity: 0.9;
     }
 
     main {
       max-width: 700px;
       margin: auto;
-      padding: 20px 15px 100px;
+      padding: 20px 16px;
     }
 
-    h2.seccion {
-      margin: 22px 0 12px;
+    .horarios {
+      background: #fff1cc;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .horarios h2 {
       font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .seccion {
+      margin-bottom: 30px;
+    }
+
+    .seccion h2 {
+      font-size: 27px;
+      margin-bottom: 16px;
     }
 
     .producto {
       background: white;
-      border-radius: 14px;
-      padding: 17px;
-      margin-bottom: 12px;
+      border-radius: 18px;
+      padding: 22px 20px;
+      margin-bottom: 14px;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+
+      box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     }
 
     .producto h3 {
-      font-size: 18px;
+      font-size: 21px;
     }
 
     .precio {
-      font-size: 19px;
+      color: #bd2929;
+      font-size: 22px;
       font-weight: bold;
-      color: #b52b27;
-    }
-
-    .horario {
-      background: #fff3d7;
-      padding: 16px;
-      border-radius: 14px;
-      margin: 15px 0;
-      line-height: 1.7;
+      white-space: nowrap;
+      margin-left: 15px;
     }
 
     .info {
       background: white;
-      padding: 18px;
-      border-radius: 14px;
+      border-radius: 18px;
+      padding: 20px;
+      line-height: 1.7;
       margin-top: 20px;
-      line-height: 1.6;
     }
 
     .pedido {
@@ -99,92 +103,109 @@
       bottom: 0;
       left: 0;
       width: 100%;
+
       background: #171717;
-      padding: 12px 15px;
-      text-align: center;
+      padding: 14px 16px 18px;
     }
 
     .pedido button {
+      display: block;
       width: 100%;
-      max-width: 650px;
-      border: 0;
-      border-radius: 12px;
-      padding: 16px;
-      font-size: 18px;
-      font-weight: bold;
-      background: #39d875;
+      max-width: 700px;
+      margin: auto;
+
+      border: none;
+      border-radius: 16px;
+
+      background: #35d477;
       color: #111;
+
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+
       cursor: pointer;
+    }
+
+    .pedido button:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🍗 Rostisseria Can Palet</h1>
-  <p>Pedidos a domicilio</p>
-</header>
+  <header>
+    <h1>🍗 Rostisseria Can Palet</h1>
+    <p>Pedidos a domicilio</p>
+  </header>
 
-<section class="hero">
-  <h2>Comida recién hecha</h2>
-  <p>Haz tu pedido de forma rápida y sencilla</p>
-</section>
+  <main>
 
-<main>
+    <section class="horarios">
+      <h2>🕐 Horarios de pedidos</h2>
+      <p><strong>Churros:</strong> 08:30 – 11:30</p>
+      <p><strong>Comidas:</strong> 12:00 – 15:00</p>
+    </section>
 
-  <div class="horario">
-    <strong>🕐 Horarios de pedidos</strong><br>
-    Churros: 08:30 – 11:30<br>
-    Comidas: 12:00 – 15:00
+
+    <section class="seccion">
+
+      <h2>🥨 Churros y porras</h2>
+
+      <div class="producto">
+        <h3>Porras 250 g</h3>
+        <span class="precio">4,00 €</span>
+      </div>
+
+      <div class="producto">
+        <h3>Porras 500 g</h3>
+        <span class="precio">8,00 €</span>
+      </div>
+
+      <div class="producto">
+        <h3>Porras 1 kg</h3>
+        <span class="precio">15,50 €</span>
+      </div>
+
+    </section>
+
+
+    <section class="seccion">
+
+      <h2>☕ Chocolate</h2>
+
+      <div class="producto">
+        <h3>Chocolate 280 ml</h3>
+        <span class="precio">2,00 €</span>
+      </div>
+
+      <div class="producto">
+        <h3>Chocolate 500 ml</h3>
+        <span class="precio">4,50 €</span>
+      </div>
+
+      <div class="producto">
+        <h3>Chocolate 1000 ml</h3>
+        <span class="precio">7,50 €</span>
+      </div>
+
+    </section>
+
+
+    <div class="info">
+      <p><strong>🚚 Reparto a domicilio</strong></p>
+      <p>Coste de reparto: <strong>4,99 €</strong></p>
+    </div>
+
+  </main>
+
+
+  <div class="pedido">
+    <button onclick="alert('En la siguiente etapa activaremos el sistema de pedidos')">
+      HACER PEDIDO
+    </button>
   </div>
-
-  <h2 class="seccion">🥨 Churros y porras</h2>
-
-  <div class="producto">
-    <h3>Porras 250 g</h3>
-    <span class="precio">4,00 €</span>
-  </div>
-
-  <div class="producto">
-    <h3>Porras 500 g</h3>
-    <span class="precio">8,00 €</span>
-  </div>
-
-  <div class="producto">
-    <h3>Porras 1 kg</h3>
-    <span class="precio">15,50 €</span>
-  </div>
-
-  <h2 class="seccion">☕ Chocolate</h2>
-
-  <div class="producto">
-    <h3>Chocolate 280 ml</h3>
-    <span class="precio">2,00 €</span>
-  </div>
-
-  <div class="producto">
-    <h3>Chocolate 500 ml</h3>
-    <span class="precio">4,50 €</span>
-  </div>
-
-  <div class="producto">
-    <h3>Chocolate 1000 ml</h3>
-    <span class="precio">7,50 €</span>
-  </div>
-
-  <div class="info">
-    <strong>🚚 Reparto a domicilio</strong><br>
-    Coste de reparto: 4,99 €
-  </div>
-
-</main>
-
-<div class="pedido">
-  <button onclick="alert('En el siguiente paso conectaremos los pedidos con Supabase')">
-    HACER PEDIDO
-  </button>
-</div>
 
 </body>
 </html>
