@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rostisseria Can Palet | Pedidos a domicilio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f3ed;
+      color: #222;
+    }
+
+    header {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #ddd;
+    }
+
+    .hero {
+      background: #b52b27;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px 15px 100px;
+    }
+
+    h2.seccion {
+      margin: 22px 0 12px;
+      font-size: 22px;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 14px;
+      padding: 17px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .producto h3 {
+      font-size: 18px;
+    }
+
+    .precio {
+      font-size: 19px;
+      font-weight: bold;
+      color: #b52b27;
+    }
+
+    .horario {
+      background: #fff3d7;
+      padding: 16px;
+      border-radius: 14px;
+      margin: 15px 0;
+      line-height: 1.7;
+    }
+
+    .info {
+      background: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .pedido {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #171717;
+      padding: 12px 15px;
+      text-align: center;
+    }
+
+    .pedido button {
+      width: 100%;
+      max-width: 650px;
+      border: 0;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #39d875;
+      color: #111;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🍗 Rostisseria Can Palet</h1>
+  <p>Pedidos a domicilio</p>
+</header>
+
+<section class="hero">
+  <h2>Comida recién hecha</h2>
+  <p>Haz tu pedido de forma rápida y sencilla</p>
+</section>
+
+<main>
+
+  <div class="horario">
+    <strong>🕐 Horarios de pedidos</strong><br>
+    Churros: 08:30 – 11:30<br>
+    Comidas: 12:00 – 15:00
+  </div>
+
+  <h2 class="seccion">🥨 Churros y porras</h2>
+
+  <div class="producto">
+    <h3>Porras 250 g</h3>
+    <span class="precio">4,00 €</span>
+  </div>
+
+  <div class="producto">
+    <h3>Porras 500 g</h3>
+    <span class="precio">8,00 €</span>
+  </div>
+
+  <div class="producto">
+    <h3>Porras 1 kg</h3>
+    <span class="precio">15,50 €</span>
+  </div>
+
+  <h2 class="seccion">☕ Chocolate</h2>
+
+  <div class="producto">
+    <h3>Chocolate 280 ml</h3>
+    <span class="precio">2,00 €</span>
+  </div>
+
+  <div class="producto">
+    <h3>Chocolate 500 ml</h3>
+    <span class="precio">4,50 €</span>
+  </div>
+
+  <div class="producto">
+    <h3>Chocolate 1000 ml</h3>
+    <span class="precio">7,50 €</span>
+  </div>
+
+  <div class="info">
+    <strong>🚚 Reparto a domicilio</strong><br>
+    Coste de reparto: 4,99 €
+  </div>
+
+</main>
+
+<div class="pedido">
+  <button onclick="alert('En el siguiente paso conectaremos los pedidos con Supabase')">
+    HACER PEDIDO
+  </button>
+</div>
+
+</body>
+</html>
