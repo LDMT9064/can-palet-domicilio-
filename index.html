@@ -689,13 +689,76 @@ function hacerPedido(){
   }
 
 
-  alert(
-  "Pedido preparado. En la siguiente etapa añadiremos los datos del cliente y la dirección de entrega."
-  );
-
+  document.getElementById("formularioPedido").style.display = "block";
+document.body.style.overflow = "hidden";
 }
 
 </script>
+
+<div id="formularioPedido" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#f6f3ed;
+  z-index:9999;
+  overflow-y:auto;
+  padding:25px;
+">
+
+  <div style="max-width:600px;margin:auto;">
+
+    <button onclick="cerrarFormulario()" style="
+      border:0;
+      background:none;
+      font-size:20px;
+      margin-bottom:20px;
+    ">← Volver</button>
+
+    <h1>🛒 Finalizar pedido</h1>
+
+    <p style="margin-bottom:25px;">
+      Introduce tus datos para recibir el pedido.
+    </p>
+
+    <label><strong>Nombre *</strong></label>
+    <input id="clienteNombre" type="text"
+      autocomplete="name"
+      style="width:100%;padding:15px;margin:8px 0 18px;
+      border:1px solid #ccc;border-radius:12px;font-size:18px;">
+
+    <label><strong>Teléfono *</strong></label>
+    <input id="clienteTelefono" type="tel"
+      autocomplete="tel"
+      style="width:100%;padding:15px;margin:8px 0 18px;
+      border:1px solid #ccc;border-radius:12px;font-size:18px;">
+
+    <label><strong>Dirección de entrega *</strong></label>
+    <input id="clienteDireccion" type="text"
+      autocomplete="street-address"
+      style="width:100%;padding:15px;margin:8px 0 18px;
+      border:1px solid #ccc;border-radius:12px;font-size:18px;">
+
+    <label><strong>Observaciones</strong></label>
+    <textarea id="clienteObservaciones"
+      placeholder="Ej.: llamar al timbre 2º B"
+      style="width:100%;padding:15px;margin:8px 0 25px;
+      border:1px solid #ccc;border-radius:12px;
+      font-size:18px;min-height:100px;"></textarea>
+
+    <button type="button" style="
+      width:100%;
+      padding:18px;
+      border:0;
+      border-radius:15px;
+      background:#60d487;
+      font-size:20px;
+      font-weight:bold;
+    ">
+      CONTINUAR →
+    </button>
+
+  </div>
+</div>
 
 </body>
 </html>
