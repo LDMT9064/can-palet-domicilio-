@@ -759,6 +759,20 @@ document.body.style.overflow = "hidden";
 
   </div>
 </div>
+<script>
+function continuarPedido() {
+  const nombre = document.getElementById("clienteNombre").value.trim();
+  const telefono = document.getElementById("clienteTelefono").value.trim();
+  const direccion = document.getElementById("clienteDireccion").value.trim();
+  const observaciones = document.getElementById("clienteObservaciones").value.trim();
 
+  if (!nombre || !telefono || !direccion) {
+    alert("Completa nombre, teléfono y dirección de entrega.");
+    return;
+  }
+
+  alert("Datos correctos. Pedido preparado para continuar.");
+}
+</script>
 </body>
 </html>
