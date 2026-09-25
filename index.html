@@ -771,7 +771,35 @@ function continuarPedido() {
     return;
   }
 
-  alert("Datos correctos. Pedido preparado para continuar.");
+  let resumenPedido = "🛒 CONFIRMA TU PEDIDO\n\n";
+
+cantidades.forEach((cantidad, i) => {
+  if (cantidad > 0) {
+    resumenPedido += cantidad + " x " + productos[i].nombre +
+      " — " + euros(cantidad * productos[i].precio) + "\n";
+  }
+});
+
+let subtotal = 0;
+
+cantidades.forEach((cantidad, i) => {
+  subtotal += cantidad * productos[i].precio;
+});
+
+let reparto = subtotal > 0 ? GASTO_REPARTO : 0;
+let total = subtotal + reparto;
+
+resumenPedido += "\nReparto: " + euros(reparto);
+resumenPedido += "\nTOTAL: " + euros(total);
+resumenPedido += "\n\nNombre: " + nombre;
+resumenPedido += "\nTeléfono: " + telefono;
+resumenPedido += "\nDirección: " + direccion;
+
+if (observaciones) {
+  resumenPedido += "\nObservaciones: " + observaciones;
+}
+
+alert(resumenPedido);
 }
 </script>
 </body>
