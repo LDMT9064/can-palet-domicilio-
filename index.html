@@ -800,6 +800,10 @@ if (observaciones) {
 }
 
 alert(resumenPedido);
+
+const numeroWhatsApp = "34674183543";
+const mensajeWhatsApp = encodeURIComponent(resumenPedido);
+window.location.href = "https://wa.me/" + numeroWhatsApp + "?text=" + mensajeWhatsApp;
 }
 </script>
 </body>
