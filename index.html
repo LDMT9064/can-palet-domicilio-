@@ -808,7 +808,8 @@ resumenPedido += "\nTOTAL: " + euros(total);
 resumenPedido += "\n\nNombre: " + nombre;
 resumenPedido += "\nTeléfono: " + telefono;
 resumenPedido += "\nDirección: " + direccion;
-
+const formaPago = document.querySelector('input[name="formaPago"]:checked').value;
+resumenPedido += "\nForma de pago: " + formaPago;
 if (observaciones) {
   resumenPedido += "\nObservaciones: " + observaciones;
 }
