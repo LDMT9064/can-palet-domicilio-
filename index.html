@@ -743,8 +743,22 @@ document.body.style.overflow = "hidden";
       placeholder="Ej.: llamar al timbre 2º B"
       style="width:100%;padding:15px;margin:8px 0 25px;
       border:1px solid #ccc;border-radius:12px;
-      font-size:18px;min-height:100px;"></textarea>
+      font-size:18px;min-height:100px;"></i
+      <div style="margin:25px 0;">
+  <label><strong>Forma de pago *</strong></label>
 
+  <div style="display:flex;gap:12px;margin-top:12px;">
+    <label style="flex:1;padding:15px;border:1px solid #ccc;border-radius:12px;text-align:center;">
+      <input type="radio" name="formaPago" value="Efectivo" checked>
+      💵 Efectivo
+    </label>
+
+    <label style="flex:1;padding:15px;border:1px solid #ccc;border-radius:12px;text-align:center;">
+      <input type="radio" name="formaPago" value="Tarjeta">
+      💳 Tarjeta
+    </label>
+  </div>
+</div>
     <button type="button" onclick="continuarPedido()" style="
       width:100%;
       padding:18px;
